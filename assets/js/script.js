@@ -31,6 +31,7 @@ function userAlert(opts) {
         timer = 10,
         show_stop_timer = true,
         stop_timer_text = "Click to stop.",
+        customColor = "", 
         confirm = false,
         confirm_btn = "Confirm",
         cancel_btn = "Cancel",
@@ -42,19 +43,32 @@ function userAlert(opts) {
     let buttons = ``;
     let icon = ``;
     let stop_timer = ``;
+    let color = ``;
+
+    if(customColor){
+        color = customColor;
+    }else if(type === "success") {
+        color = "#37bc75";
+    }else if(type === "info") {
+        color = "#30afd5";
+    }else if(type === "warning") {
+        color = "#eda32b";
+    }else if(type === "error") {
+        color = "#ed2b2b";
+    }
 
     switch (type) {
         case "success":
-            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="#37bc75" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>`
+            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>`
             break
         case "info":
-            icon = `<svg xmlns="http://www.w3.org/2000/svg" color="#30afd5" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></svg>`
+            icon = `<svg xmlns="http://www.w3.org/2000/svg" color="${color}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></svg>`
             break
         case "warning":
-            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="#eda32b"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-triangle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v4" /><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" /><path d="M12 16h.01" /></svg>`
+            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-triangle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 9v4" /><path d="M10.363 3.591l-8.106 13.534a1.914 1.914 0 0 0 1.636 2.871h16.214a1.914 1.914 0 0 0 1.636 -2.87l-8.106 -13.536a1.914 1.914 0 0 0 -3.274 0z" /><path d="M12 16h.01" /></svg>`
             break
         case "error":
-            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="#ed2b2b" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>`
+            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>`
             break
         default:
             break;
@@ -76,6 +90,7 @@ function userAlert(opts) {
     if(show_stop_timer) {
         stop_timer = `<span class="userAlert__footer_close">${stop_timer_text}</span>`
     }
+
     const $alert = $(`
     <div class="userAlert__main">
         <div class="userAlert__header">
@@ -105,7 +120,7 @@ function userAlert(opts) {
     $("#userAlertsWrapper").prepend($alert);
     $alert.find(".userAlert__footer_timeline").css({
         animation: `userAlert__timeline ${timer}s linear forwards`,
-        backgroundColor: `var(--${type})`
+        backgroundColor: `${color}`
     });
 
     let countdownTime = timer;
@@ -150,5 +165,4 @@ function userAlert(opts) {
         }, 500);
     });
 }
-
 
