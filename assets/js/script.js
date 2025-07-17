@@ -25,7 +25,7 @@ $(document).on("click", ".userAlert__footer_close", function () {
 function userAlert(opts) {
     const {
         type = "success",
-        icon_name = "check",
+        icon_name = "icons",
         title = "UserAlert",
         message = "",
         footer = "This message closes in {timer} seconds.",
