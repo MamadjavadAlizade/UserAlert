@@ -25,6 +25,7 @@ $(document).on("click", ".userAlert__footer_close", function () {
 function userAlert(opts) {
     const {
         type = "success",
+        icon_name = "check",
         title = "UserAlert",
         message = "",
         footer = "This message closes in {timer} seconds.",
@@ -59,7 +60,7 @@ function userAlert(opts) {
 
     switch (type) {
         case "success":
-            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>`
+            icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}" width="54"  height="54"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>`
             break
         case "info":
             icon = `<svg xmlns="http://www.w3.org/2000/svg" color="${color}" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0"/><path d="M12 9h.01"/><path d="M11 12h1v4h1"/></svg>`
@@ -69,6 +70,9 @@ function userAlert(opts) {
             break
         case "error":
             icon = `<svg  xmlns="http://www.w3.org/2000/svg" color="${color}" width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-alert-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>`
+            break
+        case "custom":
+            icon = `<i class="ti ti-${icon_name}"></i>`
             break
         default:
             break;
@@ -122,6 +126,9 @@ function userAlert(opts) {
         animation: `userAlert__timeline ${timer}s linear forwards`,
         backgroundColor: `${color}`
     });
+    if(type === "custom") {
+        $alert.find(".userAlert__header i").css("color", color);
+    }
 
     let countdownTime = timer;
     let countdown = setInterval(function () {
@@ -165,4 +172,3 @@ function userAlert(opts) {
         }, 500);
     });
 }
-

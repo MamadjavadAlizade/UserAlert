@@ -19,10 +19,6 @@
 }
 :root{
     --dark: #121212;
-    --success: #37bc75;
-    --info: #30afd5;
-    --warning: #eda32b;
-    --error: #ed2b2b;
     --bg-color: #f0f0f0;
     --box-bg-color: #fff;
     --box-footer-bg-color: #f7f7f7;
@@ -73,6 +69,13 @@ body{
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.userAlert__header svg, .userAlert__header i{
+    width: 24px;
+    height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    font-size: 24px;
 }
 .userAlert__title{
     color: var(--dark);
