@@ -121,7 +121,7 @@ function userAlert(opts) {
     </div>
     `);
 
-    $("#userAlertsWrapper").prepend($alert);
+    $("#userAlert__Wrapper").prepend($alert);
     $alert.find(".userAlert__footer_timeline").css({
         animation: `userAlert__timeline ${timer}s linear forwards`,
         backgroundColor: `${color}`
