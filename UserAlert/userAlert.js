@@ -1,4 +1,4 @@
-$("body").append(`<div id="userAlertsWrapper"></div>`)
+$("body").append(`<div id="userAlert__Wrapper"></div>`)
 $(document).on("click", ".userAlert__header_button_chevron", function () {
     const actived = $(this).data("actived") || false;
     if (actived) {

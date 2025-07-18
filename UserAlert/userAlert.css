@@ -28,8 +28,8 @@
     font-family: "Dana-medium";
     color: var(--userAlert__defult-text-color);
 }
-#userAlertsWrapper {
-    position: absolute;
+#userAlert__Wrapper {
+    position: fixed;
     top: 10px;
     left: 10px;
     z-index: 9999;
