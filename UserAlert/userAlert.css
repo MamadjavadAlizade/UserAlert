@@ -1,14 +1,14 @@
 @font-face {
     font-family: "Dana-Bold";
-    src: url(../fonts/Dana-Bold.woff2);
+    src: url(https://cdn.jsdelivr.net/gh/MamadjavadAlizade/UserAlert@master/fonts/Dana-Bold.woff2);
 }
 @font-face {
     font-family: "Dana-DemiBold";
-    src: url(../fonts/Dana-DemiBold.woff2);
+    src: url(https://cdn.jsdelivr.net/gh/MamadjavadAlizade/UserAlert@master/fonts/Dana-DemiBold.woff2);
 }
 @font-face {
     font-family: "Dana-Medium";
-    src: url(../fonts/Dana-Medium.woff2);
+    src: url(https://cdn.jsdelivr.net/gh/MamadjavadAlizade/UserAlert@master/fonts/Dana-Medium.woff2);
 }
 
 :root{
