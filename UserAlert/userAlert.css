@@ -26,7 +26,6 @@
 
 #userAlert__Wrapper *{
     font-family: "Dana-medium";
-    color: var(--userAlert__defult-text-color);
 }
 #userAlert__Wrapper {
     position: fixed;
@@ -89,6 +88,10 @@
     display: none;
     font-size: 14px;
     padding: 0 20px 10px 45px;
+    color: var(--userAlert__defult-text-color);
+}
+.userAlert__body p{
+    margin: 0;
 }
 .userAlert__body_button_box{
     display: flex;
