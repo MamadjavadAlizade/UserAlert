@@ -1,41 +1,32 @@
 @font-face {
     font-family: "Dana-Bold";
-    src: url(../../public/fonts/Dana-Bold.woff2);
+    src: url(../fonts/Dana-Bold.woff2);
 }
 @font-face {
     font-family: "Dana-DemiBold";
-    src: url(../../public/fonts/Dana-DemiBold.woff2);
+    src: url(../fonts/Dana-DemiBold.woff2);
 }
 @font-face {
     font-family: "Dana-Medium";
-    src: url(../../public/fonts/Dana-Medium.woff2);
+    src: url(../fonts/Dana-Medium.woff2);
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Dana-medium";
-}
 :root{
-    --dark: #121212;
-    --bg-color: #f0f0f0;
-    --box-bg-color: #fff;
-    --box-footer-bg-color: #f7f7f7;
-    --defult-text-color: #666;
-    --box-footer-text-color: #888;
-    --radius: 15px;
-    --radius-btn: 10px;
-    --btn-bg-color: #f9f9f9;
-    --btn-border-color: #e2e2e2;
+    --userAlert__dark: #121212;
+    --userAlert__bg-color: #f0f0f0;
+    --userAlert__box-bg-color: #fff;
+    --userAlert__box-footer-bg-color: #f7f7f7;
+    --userAlert__defult-text-color: #666;
+    --userAlert__box-footer-text-color: #888;
+    --userAlert__radius: 15px;
+    --userAlert__radius-btn: 10px;
+    --userAlert__btn-bg-color: #f9f9f9;
+    --userAlert__btn-border-color: #e2e2e2;
 }
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: var(--bg-color);
-    color: var(--defult-text-color);
+
+#userAlert__Wrapper *{
+    font-family: "Dana-medium";
+    color: var(--userAlert__defult-text-color);
 }
 #userAlertsWrapper {
     position: absolute;
@@ -48,8 +39,8 @@ body{
 }
 .userAlert__main{
     width: 330px;
-    border-radius: var(--radius);
-    background-color: var(--box-bg-color);
+    border-radius: var(--userAlert__radius);
+    background-color: var(--userAlert__box-bg-color);
     box-shadow: 0px 0px 5px #00000017;
     opacity: 0;
     transform: translateY(-20px);
@@ -78,7 +69,7 @@ body{
     font-size: 24px;
 }
 .userAlert__title{
-    color: var(--dark);
+    color: var(--userAlert__dark);
     font-family: "Dana-bold";
 }
 .userAlert__header_button_box{
@@ -106,31 +97,31 @@ body{
 }
 .userAlert__body_button{
     padding: 7px 10px;
-    border-radius: var(--radius-btn);
-    border: 1px solid var(--btn-border-color);
-    background-color: var(--btn-bg-color);
+    border-radius: var(--userAlert__radius-btn);
+    border: 1px solid var(--userAlert__btn-border-color);
+    background-color: var(--userAlert__btn-bg-color);
     font-family: "dana-demibold";
     cursor: pointer;
 }
 .userAlert__footer{
     overflow: auto;
-    border-radius: 0 0 var(--radius) var(--radius);
-    background-color: var(--box-footer-bg-color) !important;
+    border-radius: 0 0 var(--userAlert__radius) var(--userAlert__radius);
+    background-color: var(--userAlert__box-footer-bg-color) !important;
 }
 .userAlert__footer_textbox{
     font-size: 12px;
     padding: 4px 10px;
-    color: var(--box-footer-text-color);
+    color: var(--userAlert__box-footer-text-color);
 }
 .userAlert__footer_timer{
     font-family: "dana-bold";
-    color: var(--defult-text-color);
+    color: var(--userAlert__defult-text-color);
 }
 .userAlert__footer_close{
     font-family: "dana-bold";
-    color: var(--defult-text-color);
+    color: var(--userAlert__defult-text-color);
     cursor: pointer;
-    color: var(--dark);
+    color: var(--userAlert__dark);
     &:hover{
         text-decoration: underline;
     }
@@ -141,7 +132,7 @@ body{
 .userAlert__footer_timeline{
     width: 100%;
     height: 4px;
-    background-color: var(--success);
+    background-color: var(--userAlert__success);
 }
 @keyframes userAlert__timeline {
     from {
